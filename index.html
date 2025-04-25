@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="sw" class="dark"> <!-- Set language to Swahili -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/output.css" />
+    <link rel="stylesheet" href="/public/css/output.css" /> <!-- Ensure this path is correct -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,94 +14,202 @@
       href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
       rel="stylesheet"
     />
-    <title>Kadolab- HTML and CSS course- project demo</title>
+    <title>Jifunze HTML, CSS, Tailwind & JavaScript kwa Vitendo | Kadolab</title> <!-- Updated Title -->
+    <style>
+      /* Optional: Subtle gradient for hero or sections */
+      .hero-gradient {
+        background: linear-gradient(180deg, rgba(39, 39, 42, 0.9) 0%, rgba(24, 24, 27, 1) 100%);
+      }
+      /* Ensure smooth scroll for anchor links */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
-  <body class="font-sans bg-zinc-900 text-zinc-300 h-dvh overflow-auto">
-    <header>
-      <div class="">
-        <nav class="border-zinc-200 bg-zinc-900">
-          <div
-            class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-          >
-            <a
-              href="https://flowbite.com/"
-              class="flex items-center space-x-3 rtl:space-x-reverse"
-            >
-              <img
-                src="public/brand/logo-transparent.png"
-                class="size-10"
-                alt="life pocket logo"
-              />
-              <span
-                class="self-center text-2xl font-semibold whitespace-nowrap text-zinc-400"
-                >Lifepocket</span
-              >
-            </a>
-            <button
-              data-collapse-toggle="navbar-default"
-              type="button"
-              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-zinc-500 rounded-lg md:hidden hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
-              aria-controls="navbar-default"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-              <ul
-                class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-zinc-800 bg-zinc-800 md:dark:bg-zinc-900 border-zinc-700"
-              >
-                <li>
-                  <a
-                    href="index.html"
-                    class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                    aria-current="page"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/pages/login.html"
-                    class="block py-2 px-3 rounded-sm hover:bg-zinc-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-zinc-400 md:dark:hover:text-blue-500 dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    >Login</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/pages/register.html"
-                    class="block py-2 px-3 rounded-sm hover:bg-zinc-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-zinc-400 md:dark:hover:text-blue-500 dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                    >Register</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+  <body class="font-sans bg-zinc-900 text-zinc-300 overflow-x-hidden"> <!-- Allow vertical scroll -->
 
-        <div class="hero bg-blue-500 text-white text-center py-20 px-4">
-          <h2 class="text-4xl font-bold">Manage your expenses easly</h2>
-          <p class="mt-4">Your finances must be arranged perfectly to set a better lifestyle in the future</p>
-          <button class="bg-white text-blue-500 rounded px-4 py-2 mt-4">
-            Get Started
+    <!-- Header & Navbar -->
+    <header class="sticky top-0 z-50 w-full">
+      <nav class="border-b border-zinc-700 bg-zinc-900/80 backdrop-blur-md"> <!-- Added backdrop blur for effect -->
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img
+              src="/public/brand/logo-transparent.png"
+              class="size-10"
+              alt="Kadolab Logo"
+            />
+            <!-- Optional: Use Kadolab or keep Lifepocket brand -->
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Kadolab</span>
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-zinc-400 rounded-lg md:hidden hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Fungua menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
           </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-zinc-700 rounded-lg bg-zinc-800 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
+              <li>
+                <a href="#" class="block py-2 px-3 text-white bg-cyan-600 rounded md:bg-transparent md:text-cyan-500 md:p-0" aria-current="page">Mwanzo</a>
+              </li>
+              <li>
+                <a href="#project-demo" class="block py-2 px-3 text-zinc-300 rounded hover:bg-zinc-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-500 md:p-0">Mradi Demo</a>
+              </li>
+              <li>
+                <a href="#course-details" class="block py-2 px-3 text-zinc-300 rounded hover:bg-zinc-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-500 md:p-0">Kuhusu Kozi</a>
+              </li>
+              <li>
+                <a href="#join-us" class="block py-2 px-3 text-zinc-300 rounded hover:bg-zinc-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-500 md:p-0">Jiunge Sasa</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero-gradient text-center pt-24 pb-32 px-4">
+        <img src="/public/brand/logo-transparent.png" alt="Kadolab Logo" class="mx-auto h-20 w-auto mb-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
+            Jifunze <span class="text-cyan-400">HTML, CSS, Tailwind</span> na <span class="text-cyan-400">JavaScript</span> kwa Kutengeneza Mradi Halisi!
+        </h1>
+        <p class="mt-4 mb-8 text-lg md:text-xl max-w-3xl mx-auto text-zinc-300">
+            Badilisha ujuzi wako wa web development! Jiunge na kozi yetu kwa Kiswahili na ujenge mfumo kamili wa kusimamia matumizi (<span class="font-semibold text-white">Lifepocket</span>) hatua kwa hatua.
+        </p>
+        <a href="#join-us" class="inline-block bg-cyan-600 text-white rounded-lg px-8 py-3 text-lg font-semibold hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-800 transition duration-300">
+            Anza Kujifunza Sasa!
+        </a>
+        <div class="mt-12 max-w-4xl mx-auto">
+            <img src="/public/images/lifepocket-dashboard-mockup.png" alt="Lifepocket Dashboard Mockup" class="rounded-lg shadow-2xl border-4 border-zinc-700">
+             <!-- === IMPORTANT: Replace with an actual screenshot/mockup of your Lifepocket dashboard === -->
+             <!-- Maybe show it inside a laptop screen for better presentation -->
+             <!-- Example placeholder: -->
+             <!-- <div class="aspect-video bg-zinc-700 rounded-lg flex items-center justify-center text-zinc-500 shadow-2xl border-4 border-zinc-700">
+                [Picha ya Dashboard ya Lifepocket Hapa]
+             </div> -->
+        </div>
+    </section>
+
+    <!-- What You'll Build Section -->
+    <section id="project-demo" class="py-16 md:py-24 bg-zinc-900 px-4">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Utatengeneza Nini? <span class="text-cyan-400">Lifepocket!</span></h2>
+            <p class="text-lg text-zinc-400 mb-12 max-w-2xl mx-auto">Huu sio mradi wa mazoezi tu - utatengeneza mfumo kamili wa usimamizi wa fedha (Expense Tracker) unaoweza kutumia au kuonyesha kama portfolio yako.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-zinc-800 p-6 rounded-lg shadow-lg border border-zinc-700">
+                    <svg class="w-10 h-10 text-cyan-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Dashboard ya Kisasa</h3>
+                    <p class="text-zinc-400">Muonekano mzuri na rahisi kutumia kuona muhtasari wa mapato na matumizi yako.</p>
+                </div>
+                <!-- Feature 2 -->
+                 <div class="bg-zinc-800 p-6 rounded-lg shadow-lg border border-zinc-700">
+                    <svg class="w-10 h-10 text-cyan-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Usimamizi wa Miamala</h3>
+                    <p class="text-zinc-400">Weka, hariri, na futa miamala ya mapato na matumizi kwa urahisi.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-zinc-800 p-6 rounded-lg shadow-lg border border-zinc-700">
+                     <svg class="w-10 h-10 text-cyan-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">Categories & Wallets</h3>
+                    <p class="text-zinc-400">Panga matumizi yako kwa categories na fuatilia fedha katika akaunti (wallets) tofauti.</p>
+                </div>
+            </div>
+            <!-- Link to Demo (Optional) -->
+            <!--
+            <div class="mt-10">
+                <a href="dashboard.html" target="_blank" class="text-cyan-500 hover:text-cyan-400 font-medium inline-flex items-center">
+                    Angalia Demo Live
+                    <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+            -->
+        </div>
+    </section>
+
+     <!-- What You'll Learn Section -->
+    <section id="course-details" class="py-16 md:py-24 bg-zinc-800 px-4">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Utajifunza Nini Kwenye Kozi Hii?</h2>
+             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <!-- Skill 1 -->
+                <div class="bg-zinc-700 p-6 rounded-lg">
+                     <h3 class="text-xl font-semibold text-white mb-2">HTML5</h3>
+                     <p class="text-zinc-300">Kuunda muundo (structure) wa kurasa za web kwa kutumia semantic HTML.</p>
+                </div>
+                 <!-- Skill 2 -->
+                <div class="bg-zinc-700 p-6 rounded-lg">
+                     <h3 class="text-xl font-semibold text-white mb-2">CSS3</h3>
+                     <p class="text-zinc-300">Kupamba na kuipa mtindo kurasa za web, ikiwemo Flexbox na Grid.</p>
+                </div>
+                 <!-- Skill 3 -->
+                <div class="bg-zinc-700 p-6 rounded-lg">
+                     <h3 class="text-xl font-semibold text-white mb-2">Tailwind CSS</h3>
+                     <p class="text-zinc-300">Framework ya kisasa ya CSS (utility-first) kwa ajili ya speed na design nzuri.</p>
+                </div>
+                 <!-- Skill 4 -->
+                 <div class="bg-zinc-700 p-6 rounded-lg">
+                     <h3 class="text-xl font-semibold text-white mb-2">JavaScript (Basics)</h3>
+                     <p class="text-zinc-300">Kuongeza interactivity na kufanya web iwe dynamic (DOM manipulation, events).</p>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- How the Course Works Section -->
+    <section class="py-16 md:py-24 bg-zinc-900 px-4">
+        <div class="max-w-screen-md mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Jinsi Utakavyojifunza</h2>
+            <p class="text-lg text-zinc-400 mb-10">Mfumo wetu umeundwa kukurahisishia kujifunza popote ulipo:</p>
+            <ul class="space-y-4 text-left max-w-lg mx-auto">
+                <li class="flex items-start space-x-3">
+                    <svg class="flex-shrink-0 w-6 h-6 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span class="text-zinc-300"><strong class="text-white">Group la WhatsApp:</strong> Kiini cha mawasiliano, maswali, na updates zote za kozi.</span>
+                </li>
+                 <li class="flex items-start space-x-3">
+                    <svg class="flex-shrink-0 w-6 h-6 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span class="text-zinc-300"><strong class="text-white">Video za Kila Siku:</strong> Video fupi na zenye kueleweka zitatumwa kila siku kwenye group.</span>
+                </li>
+                 <li class="flex items-start space-x-3">
+                    <svg class="flex-shrink-0 w-6 h-6 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span class="text-zinc-300"><strong class="text-white">PDF Notes:</strong> Nyenzo za ziada kwa ajili ya marejeo na kujisomea zaidi.</span>
+                </li>
+                 <li class="flex items-start space-x-3">
+                    <svg class="flex-shrink-0 w-6 h-6 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span class="text-zinc-300"><strong class="text-white">Live Zoom (Mara Moja kwa Wiki):</strong> Kipindi cha maswali na majibu, na ufafanuzi wa mada ngumu.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Final Call to Action Section -->
+    <section id="join-us" class="py-16 md:py-24 bg-zinc-800 px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Tayari Kuanza Safari Yako?</h2>
+        <p class="text-lg text-zinc-400 mb-8 max-w-xl mx-auto">Usisubiri! Jiunge na group letu la WhatsApp sasa kupata taarifa zote na kuanza kujifunza kutengeneza web apps za kisasa.</p>
+        <a href="[YOUR_WHATSAPP_GROUP_LINK_HERE]" target="_blank" rel="noopener noreferrer" class="inline-block bg-cyan-600 text-white rounded-lg px-8 py-3 text-lg font-semibold hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-800 transition duration-300">
+            Jiunge na Group la WhatsApp!
+        </a>
+        <p class="text-sm text-zinc-500 mt-6">Ada ya kozi ni nafuu. Taarifa zaidi zitapatikana kwenye group.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 p-4 md:py-6">
+        <div class="max-w-screen-xl mx-auto text-center text-sm text-zinc-400">
+            © <span id="currentYear"></span> Kadolab. Haki zote zimehifadhiwa. Course by [Your Name/Instructor Name].
+        </div>
+    </footer>
+
+
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
