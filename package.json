@@ -1,0 +1,14 @@
+{
+  "name": "tailwindcss-setup",
+  "version": "1.0.0",
+  "description": "A simple Tailwind CSS setup",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  }
+}

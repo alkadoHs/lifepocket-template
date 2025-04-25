@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+            rel="stylesheet"
+        />
+        <!-- Make sure this points to your compiled Tailwind CSS -->
+        <link rel="stylesheet" href="/public/css/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Lifepocket - Profile</title>
+    </head>
+    <body class="font-sans bg-zinc-900 text-zinc-300 h-dvh overflow-auto">
+
+        <div class="antialiased bg-zinc-900">
+          <!-- nav bar start-->
+            <nav class="bg-zinc-800 border-b border-zinc-700 px-4 py-2.5 fixed left-0 right-0 top-0 z-50">
+              <div class="flex flex-wrap justify-between items-center">
+                <div class="flex justify-start items-center">
+                  <button
+                    data-drawer-target="drawer-navigation"
+                    data-drawer-toggle="drawer-navigation"
+                    aria-controls="drawer-navigation"
+                    class="p-2 mr-2 text-zinc-400 rounded-lg cursor-pointer md:hidden hover:text-white hover:bg-zinc-700 focus:bg-zinc-700 focus:ring-2 focus:ring-zinc-700"
+                  >
+                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg aria-hidden="true" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Toggle sidebar</span>
+                  </button>
+                  <a href="#" class="flex items-center justify-between mr-4">
+                    <img
+                      src="/public/brand/logo-transparent.png"
+                      class="mr-3 h-8"
+                      alt="Logo"
+                    />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Lifepocket</span>
+                  </a>
+                  <form action="#" method="GET" class="hidden md:block md:pl-2">
+                    <label for="topbar-search" class="sr-only">Search</label>
+                    <div class="relative md:w-64 ">
+                      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                      > <svg   class="w-5 h-5 text-zinc-400"   fill="currentColor"   viewBox="0 0 20 20"   xmlns="http://www.w3.org/2000/svg" >   <path     fill-rule="evenodd"     clip-rule="evenodd"     d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"   ></path> </svg>
+                      </div>
+                      <input type="text" name="search" id="topbar-search" class="bg-zinc-700 border border-zinc-600 placeholder-zinc-400 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full pl-10 px-3 py-1.5" placeholder="Search"
+                      />
+                    </div>
+                  </form>
+                </div>
+                <div class="flex items-center lg:order-2">
+                  <button
+                    type="button"
+                    data-dropdown-toggle="notification-dropdown"
+                    class="p-2 mr-1 text-zinc-400 rounded-lg hover:text-white hover:bg-zinc-700 focus:ring-4 focus:ring-zinc-600"
+                  >
+                    <span class="sr-only">View notifications</span>
+                    <svg
+                      aria-hidden="true"
+                      class="w-6 h-6"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="hidden overflow-hidden z-50 my-4 max-w-xl text-base list-none bg-zinc-700 divide-y divide-zinc-600 shadow-lg rounded-xl"
+                    id="notification-dropdown"
+                  >
+                    <div
+                      class="block py-2 px-4 text-base font-medium text-center text-zinc-300 bg-zinc-600"
+                    >
+                      Notifications
+                    </div>
+                    <div>
+                       <p class="p-4 text-sm text-center text-zinc-400">No new notifications</p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    data-dropdown-toggle="apps-dropdown"
+                    class="p-2 text-zinc-400 rounded-lg hover:text-white hover:bg-zinc-700 focus:ring-4 focus:ring-zinc-600"
+                  >
+                    <span class="sr-only">View Apps</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                    </svg>
+                  </button>
+                  <div
+                    class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-zinc-700 divide-y divide-zinc-600 shadow-lg rounded-xl"
+                    id="apps-dropdown"
+                  >
+                    <div
+                      class="block py-2 px-4 text-base font-medium text-center text-zinc-300 bg-zinc-600"
+                    >
+                      Apps
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 p-4">
+                       <p class="col-span-3 text-sm text-center text-zinc-400">No apps available</p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="flex mx-3 text-sm bg-zinc-800 rounded-full md:mr-0 focus:ring-4 focus:ring-zinc-600"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    data-dropdown-toggle="dropdown"
+                  >
+                    <span class="sr-only">Open user menu</span>
+                    <img
+                      class="w-8 h-8 rounded-full"
+                      src="/public/brand/logo2.png"
+                      alt="user photo"
+                    />
+                  </button>
+                  <div
+                    class="hidden z-50 my-4 w-56 text-base list-none bg-zinc-700 divide-y divide-zinc-600 shadow rounded-xl"
+                    id="dropdown"
+                  >
+                    <div class="py-3 px-4">
+                      <span class="block text-sm font-semibold text-white" >John Doe</span
+                      >
+                      <span class="block text-sm text-white truncate" >johndoe@gmail.com</span
+                      >
+                    </div>
+                    <ul
+                      class="py-1 text-zinc-300"
+                      aria-labelledby="dropdown"
+                    >
+                      <li>
+                        <a href="profile.html" class="block py-2 px-4 text-sm hover:bg-zinc-600 text-zinc-400 hover:text-white" >My profile</a > <!-- Link to profile -->
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-4 text-sm hover:bg-zinc-600 text-zinc-400 hover:text-white" >Account settings</a >
+                      </li>
+                    </ul>
+                    <ul
+                      class="py-1 text-zinc-300"
+                      aria-labelledby="dropdown"
+                    >
+                      <li> <a   href="login.html"   class="block py-2 px-4 text-sm hover:bg-zinc-600 hover:text-white"   >Sign out</a >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          <!-- nav bar end-->
+
+          <!-- sidebar start -->
+            <aside
+                class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-zinc-800 border-r border-zinc-700 md:translate-x-0"
+                aria-label="Sidenav"
+                id="drawer-navigation"
+                >
+              <div class="overflow-y-auto py-5 px-3 h-full bg-zinc-800">
+                <form action="#" method="GET" class="md:hidden mb-2">
+                  <label for="sidebar-search" class="sr-only">Search</label>
+                  <div class="relative">
+                    <div
+                      class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                    >
+                      <svg class="w-5 h-5 text-zinc-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                      > <path fill-rule="evenodd"   clip-rule="evenodd"   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" ></path>
+                      </svg>
+                    </div>
+                    <input type="text" name="search" id="sidebar-search" class="bg-zinc-700 border border-zinc-600 placeholder-zinc-400 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full pl-10 p-2" placeholder="Search" />
+                  </div>
+                </form>
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="dashboard.html"
+                      class="flex items-center p-2 text-base font-medium text-white rounded-lg hover:bg-zinc-700 group"
+                    >
+                      <svg aria-hidden="true" class="w-6 h-6 text-zinc-400 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path> <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+                      <span class="ml-3">Dashboard</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="transactions.html"
+                      class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-zinc-700 group"
+                    >
+                      <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-zinc-400 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path> <path   fill-rule="evenodd"   d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"   clip-rule="evenodd" ></path></svg>
+                      <span class="ml-3">Transactions</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul
+                  class="pt-5 mt-5 space-y-2 border-t border-zinc-700"
+                >
+                  <li>
+                    <a
+                      href="categories.html"
+                      class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-zinc-700 group"
+                    >
+                      <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-zinc-400 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path   fill-rule="evenodd"   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"   clip-rule="evenodd" ></path></svg>
+                      <span class="ml-3">Expense Categories</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="wallets.html"
+                      class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-zinc-700 group"
+                    >
+                      <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-zinc-400 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path   d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" ></path></svg>
+                      <span class="ml-3">Wallets</span>
+                    </a>
+                  </li>
+                  <!-- Add a Profile link here if desired -->
+                   <li>
+                    <a
+                      href="profile.html"
+                      class="flex items-center p-2 text-base font-medium text-white rounded-lg bg-zinc-700 group" <!-- Active state -->
+                    >
+                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-white transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                      <span class="ml-3">Profile</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          <!-- sidebar end-->
+
+          <!-- main content start-->
+            <main class="p-4 md:ml-64 h-auto pt-20">
+                <div class="p-4 bg-zinc-800 rounded-lg mb-4">
+                    <h2 class="text-2xl font-semibold text-white">Account Settings</h2>
+                    <p class="mt-1 text-sm text-zinc-400">Manage your profile information and preferences.</p>
+                </div>
+
+                <!-- Profile Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                    <!-- Column 1: Profile Card -->
+                    <div class="lg:col-span-1 space-y-4">
+                        <div class="p-6 bg-zinc-800 rounded-lg shadow-md">
+                            <div class="flex flex-col items-center">
+                                <img class="w-32 h-32 mb-3 rounded-full shadow-lg" src="/public/brand/logo2.png" alt="User avatar"/> <!-- Use actual user avatar path -->
+                                <h5 class="mb-1 text-xl font-medium text-white">John Doe</h5>
+                                <span class="text-sm text-zinc-400">johndoe@gmail.com</span>
+                                <div class="mt-4">
+                                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-cyan-600 rounded-lg hover:bg-cyan-700 focus:ring-4 focus:outline-none focus:ring-cyan-800">
+                                        Change Picture
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Optional: Preferences Card -->
+                        <div class="p-6 bg-zinc-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-white mb-4">Preferences</h3>
+                            <div class="space-y-3">
+                                <label for="email-notifications" class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" id="email-notifications" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-zinc-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-cyan-800 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-zinc-600 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-600"></div>
+                                    <span class="ms-3 text-sm font-medium text-zinc-300">Email Notifications</span>
+                                </label>
+                                <!-- Add more preferences like currency, language etc. if needed -->
+                                <div>
+                                    <label for="currency" class="block mb-1 text-sm font-medium text-white">Default Currency</label>
+                                    <select id="currency" name="currency" class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-zinc-400">
+                                        <option selected value="USD">USD - US Dollar</option>
+                                        <option value="EUR">EUR - Euro</option>
+                                        <option value="GBP">GBP - British Pound</option>
+                                        <option value="CAD">CAD - Canadian Dollar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Settings Forms -->
+                    <div class="lg:col-span-2 space-y-4">
+                         <!-- Personal Information Form -->
+                         <div class="p-6 bg-zinc-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-white mb-4">Personal Information</h3>
+                            <form action="#">
+                                <div class="grid gap-4 sm:grid-cols-2 mb-4">
+                                    <div>
+                                        <label for="full-name" class="block mb-2 text-sm font-medium text-white">Full Name</label>
+                                        <input type="text" name="full-name" id="full-name" class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-zinc-400" placeholder="John Doe" required="">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
+                                        <input type="email" name="email" id="email" class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-zinc-400" placeholder="johndoe@gmail.com" required="">
+                                    </div>
+                                </div>
+                                <button type="submit" class="text-white inline-flex items-center bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:outline-none focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    Save Changes
+                                </button>
+                            </form>
+                         </div>
+
+                         <!-- Change Password Form -->
+                         <div class="p-6 bg-zinc-800 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-white mb-4">Change Password</h3>
+                             <form action="#">
+                                <div class="space-y-4 mb-4">
+                                    <div>
+                                        <label for="current-password" class="block mb-2 text-sm font-medium text-white">Current Password</label>
+                                        <input type="password" name="current-password" id="current-password" class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-zinc-400" placeholder="••••••••" required="">
+                                    </div>
+                                    <div>
+                                        <label for="new-password" class="block mb-2 text-sm font-medium text-white">New Password</label>
+                                        <input type="password" name="new-password" id="new-password" class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-zinc-400" placeholder="••••••••" required="">
+                                    </div>
+                                    <div>
+                                        <label for="confirm-password" class="block mb-2 text-sm font-medium text-white">Confirm New Password</label>
+                                        <input type="password" name="confirm-password" id="confirm-password" class="bg-zinc-700 border border-zinc-600 text-white text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-zinc-400" placeholder="••••••••" required="">
+                                    </div>
+                                </div>
+                                <button type="submit" class="text-white inline-flex items-center bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:outline-none focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    Change Password
+                                </button>
+                            </form>
+                         </div>
+
+                         <!-- Danger Zone -->
+                         <div class="p-6 bg-zinc-800 rounded-lg shadow-md border border-red-900">
+                            <h3 class="text-lg font-semibold text-red-500 mb-4">Danger Zone</h3>
+                             <p class="text-sm text-zinc-400 mb-4">Deleting your account is permanent and cannot be undone.</p>
+                             <button type="button" data-modal-target="deleteAccountModal" data-modal-toggle="deleteAccountModal" class="text-white inline-flex items-center bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                Delete Account
+                            </button>
+                         </div>
+                    </div>
+                </div>
+            </main>
+          <!-- main content end-->
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- == DELETE ACCOUNT CONFIRMATION MODAL == -->
+        <!-- ============================================================ -->
+        <div id="deleteAccountModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="relative p-4 text-center bg-zinc-800 rounded-lg shadow sm:p-5">
+                     <button type="button" class="text-zinc-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-zinc-600 hover:text-white rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="deleteAccountModal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <svg class="text-zinc-500 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                    <p class="mb-4 text-zinc-400">Are you sure you want to delete your account? This action cannot be undone.</p>
+                    <div class="flex justify-center items-center space-x-4">
+                        <button data-modal-toggle="deleteAccountModal" type="button" class="py-2 px-3 text-sm font-medium text-zinc-400 bg-zinc-700 rounded-lg border border-zinc-600 hover:bg-zinc-600 focus:ring-4 focus:outline-none focus:ring-zinc-700 hover:text-white focus:z-10">
+                            No, cancel
+                        </button>
+                        <button type="submit" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-800">
+                            Yes, I'm sure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Delete Account Modal -->
+
+
+          <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    </body>
+  </html>
